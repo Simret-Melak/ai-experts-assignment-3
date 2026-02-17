@@ -41,5 +41,7 @@ def test_api_request_refreshes_when_token_is_dict():
     c.oauth2_token = {"access_token": "stale", "expires_at": 0}
 
     resp = c.request("GET", "/me", api=True)
+   
 
     assert resp["headers"].get("Authorization") == "Bearer fresh-token"
+
