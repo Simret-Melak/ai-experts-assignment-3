@@ -42,22 +42,22 @@ Update this README to include:
 - git clone "your-repo-url"
 - cd ai-experts-assignment-3
 
-# Create virtual environment
+### Create virtual environment
     python3 -m venv venv
 
-# Activate it
-# On macOS/Linux:
+### Activate it
+### On macOS/Linux:
 source venv/bin/activate
-# On Windows:
+### On Windows:
 venv\Scripts\activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run all tests with verbose output
+### Run all tests with verbose output
 pytest -v
 
-# Deactivate virtual environment
+### Deactivate virtual environment
 deactivate
 
 ## Running with Docker
