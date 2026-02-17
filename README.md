@@ -39,8 +39,8 @@ Update this README to include:
 ### Step-by-Step Instructions
 
 **Step 1: Clone the repository** 
-    git clone <your-repo-url>
-    cd ai-experts-assignment-3
+- git clone <your-repo-url>
+- cd ai-experts-assignment-3
 
 # Create virtual environment
     python3 -m venv venv
