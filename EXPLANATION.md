@@ -1,7 +1,7 @@
 
 ## What was the bug?
-The client incorrectly handled dictionary-based tokens. When `self.oauth2_token` was a dictionary (legacy format) instead of an `OAuth2Token` object, the code:
-1. Did not refresh the token (even though it was stale)
+The client incorrectly handled dictionary-based tokens. When `self.oauth2_token` was a dictionary instead of an `OAuth2Token` object, the code:
+1. Did not refresh the token 
 2. Did not add an Authorization header to requests
 3. Caused the test `test_api_request_refreshes_when_token_is_dict` to fail
 
@@ -14,13 +14,11 @@ Dictionary tokens were completely ignored. They didn't trigger a refresh (since 
 
 ## Why does your fix actually solve it?
 The fix adds dictionary tokens to the refresh condition
-```markdown
-```python
+
 if (not self.oauth2_token or 
     isinstance(self.oauth2_token, dict) or  # THIS LINE
     (isinstance(self.oauth2_token, OAuth2Token) and self.oauth2_token.expired)):
     self.refresh_oauth2()
-    
 
 Now when a dictionary token is present:
 

@@ -30,8 +30,56 @@ Create a `requirements.txt` with pinned versions, using this format:
 
 Update this README to include:
 
-- how to run the tests locally,
-- how to build and run tests with Docker.
+## Running Tests Locally
+
+### Prerequisites
+- Python 3.9 or higher
+- pip (Python package installer)
+
+### Step-by-Step Instructions
+
+**Step 1: Clone the repository** 
+    git clone <your-repo-url>
+    cd ai-experts-assignment-3
+
+# Create virtual environment
+    python3 -m venv venv
+
+# Activate it
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run all tests with verbose output
+pytest -v
+
+# Deactivate virtual environment
+deactivate
+
+## Running with Docker
+
+### Prerequisites
+- Docker installed on your machine
+- Docker daemon running (Docker Desktop on Mac/Windows)
+
+### Step-by-Step Instructions
+
+**Step 1: Build the Docker image**
+
+docker build -t ai-experts-assignment .
+
+**Step 2: Run all tests**
+
+docker run --rm ai-experts-assignment
+
+**Step 5: Clean up (when done)**
+
+docker rmi ai-experts-assignment
+
 
 ### 4) Find + fix a bug (required)
 
